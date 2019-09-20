@@ -44,6 +44,7 @@
           _this.loading = false;
           if (resp && resp.status == 200) {
             var data = resp.data;
+            console.log('data',data)
             _this.$store.commit('login', data.obj);
             var path = _this.$route.query.redirect;
             _this.$router

@@ -25,15 +25,11 @@ Vue.prototype.putRequest = putRequest;
 Vue.prototype.isNotNullORBlank = isNotNullORBlank;
 
 router.beforeEach((to, from, next)=> {
-  console.log('to',to)
-  console.log('from',from)
-  console.log('next',next)
     if (to.name == 'Login') {
       next();
       return;
     }
     var name = store.state.user.name;
-    console.log('name',name)
     if (name == '未登录') {
       if (to.meta.requireAuth || to.name == null) {
         next({path: '/', query: {redirect: to.path}})

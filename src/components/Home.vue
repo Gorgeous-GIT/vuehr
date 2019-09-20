@@ -60,7 +60,7 @@
   export default{
     mounted: function () {
 //      this.devMsg();
-      this.loadNF();
+//       this.loadNF();
     },
     methods: {
       loadNF(){
@@ -68,6 +68,7 @@
         this.getRequest("/chat/sysmsgs").then(resp=> {
           var isDot = false;
           resp.data.forEach(msg=> {
+            console.log('msg',msg)
             if (msg.state == 0) {
               isDot = true;
             }
